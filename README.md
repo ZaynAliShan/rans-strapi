@@ -1,0 +1,2 @@
+# rans-strapi
+Blog Module
