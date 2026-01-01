@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_analytics",
+  "info": {
+    "displayName": "Analytics",
+    "description": "Analytics metrics for articles"
+  },
+  "options": {},
+  "attributes": {
+    "uniqueViews": {
+      "type": "integer",
+      "default": 0
+    },
+    "totalViews": {
+      "type": "integer",
+      "default": 0
+    },
+    "averageTimeOnPage": {
+      "type": "decimal",
+      "default": 0
+    },
+    "bounceRate": {
+      "type": "decimal",
+      "default": 0
+    },
+    "engagementScore": {
+      "type": "decimal",
+      "default": 0
+    },
+    "lastUpdated": {
+      "type": "datetime"
+    }
+  }
+}
+

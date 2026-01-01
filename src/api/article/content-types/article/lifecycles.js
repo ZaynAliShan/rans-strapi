@@ -34,19 +34,7 @@ module.exports = {
     }
   },
 
-  async afterFindOne(event) {
-    // Increment view count
-    if (event.result) {
-      await strapi.entityService.update(
-        'api::article.article',
-        event.result.id,
-        {
-          data: {
-            viewCount: (event.result.viewCount || 0) + 1,
-          },
-        }
-      );
-    }
-  },
+  // REMOVED afterFindOne - this was causing performance issues
+  // View count should be incremented in the controller, not lifecycle hook
+  // This hook was firing on every Content Manager request
 };
-

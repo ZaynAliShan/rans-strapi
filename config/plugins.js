@@ -9,8 +9,23 @@ module.exports = ({ env }) => ({
   },
   upload: {
     config: {
-      provider: 'local',
-      providerOptions: {},
+      provider: 'aws-s3',
+      providerOptions: {
+        s3Options: {
+          credentials: {
+            accessKeyId: env('R2_ACCESS_KEY_ID'),
+            secretAccessKey: env('R2_SECRET_ACCESS_KEY'),
+          },
+          region: env('R2_REGION', 'auto'),
+          endpoint: env('R2_ENDPOINT'), // Cloudflare R2 endpoint
+          forcePathStyle: true, // Required for R2 (note: not s3ForcePathStyle)
+        },
+        params: {
+          Bucket: env('R2_BUCKET_NAME'),
+          ACL: 'public-read', // Optional: set ACL for uploaded files
+        },
+        baseUrl: env('R2_PUBLIC_URL'), // Public URL for accessing files
+      },
       actionOptions: {
         upload: {},
         uploadStream: {},

@@ -14,6 +14,7 @@ module.exports = ({ env }) => [
             'blob:',
             'dl.airtable.com',
             env('CDN_URL', ''),
+            env('R2_PUBLIC_URL', ''),
           ],
           'media-src': [
             "'self'",
@@ -21,6 +22,7 @@ module.exports = ({ env }) => [
             'blob:',
             'dl.airtable.com',
             env('CDN_URL', ''),
+            env('R2_PUBLIC_URL', ''),
           ],
           upgradeInsecureRequests: null,
         },

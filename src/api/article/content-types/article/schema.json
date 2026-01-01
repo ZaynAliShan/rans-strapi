@@ -91,6 +91,23 @@
     "readingTime": {
       "type": "integer",
       "required": false
+    },
+    "analytics": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.analytics"
+    },
+    "socialShares": {
+      "type": "json",
+      "required": false,
+      "default": {
+        "facebook": 0,
+        "twitter": 0,
+        "linkedin": 0,
+        "whatsapp": 0,
+        "email": 0,
+        "total": 0
+      }
     }
   }
 }

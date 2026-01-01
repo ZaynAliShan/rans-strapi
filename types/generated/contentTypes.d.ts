@@ -379,6 +379,7 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     };
   };
   attributes: {
+    analytics: Attribute.Component<'shared.analytics'>;
     author: Attribute.Relation<
       'api::article.article',
       'manyToOne',
@@ -414,6 +415,15 @@ export interface ApiArticleArticle extends Schema.CollectionType {
     slug: Attribute.UID<'api::article.article', 'title'> &
       Attribute.Required &
       Attribute.Unique;
+    socialShares: Attribute.JSON &
+      Attribute.DefaultTo<{
+        email: 0;
+        facebook: 0;
+        linkedin: 0;
+        total: 0;
+        twitter: 0;
+        whatsapp: 0;
+      }>;
     tags: Attribute.JSON;
     title: Attribute.String &
       Attribute.Required &

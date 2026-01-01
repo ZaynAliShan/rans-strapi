@@ -21,6 +21,37 @@
       "type": "media",
       "multiple": false,
       "allowedTypes": ["images"]
+    },
+    "ogTitle": {
+      "type": "string",
+      "maxLength": 60
+    },
+    "ogDescription": {
+      "type": "text",
+      "maxLength": 200
+    },
+    "ogType": {
+      "type": "enumeration",
+      "enum": ["article", "website"],
+      "default": "article"
+    },
+    "twitterCard": {
+      "type": "enumeration",
+      "enum": ["summary", "summary_large_image"],
+      "default": "summary_large_image"
+    },
+    "twitterTitle": {
+      "type": "string",
+      "maxLength": 70
+    },
+    "twitterDescription": {
+      "type": "text",
+      "maxLength": 200
+    },
+    "twitterImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
     }
   }
 }
